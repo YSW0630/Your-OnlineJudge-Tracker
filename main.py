@@ -13,7 +13,7 @@ def load_data():
             return data
     except FileNotFoundError:
         print("檔案不存在")
-        return {"latestProblemID": -1, "semester": "PR113-2-", "problemURL": "http://134.208.3.66/problem/"}
+        return {"latestProblemID": -1}
 
 
 def update_latest_problem_id(data):
@@ -27,7 +27,7 @@ data = load_data()
 
 while True:
     # 判斷檔案是否可用
-    if data["problemURL"] == -1:
+    if data["latestProblemID"] == -1:
         break
 
     # 目標網址
